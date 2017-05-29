@@ -10,3 +10,10 @@
   category = { :name => Faker::Job.field }
   Category.create(category)
 end
+
+Category.all.each do |category|
+  3.times do
+    article_info = { :title => Faker::Job.title, :description => Faker::GameOfThrones.character, :email => Faker::Internet.safe_email, :price => rand(1.00..1000.00).round(2) }
+    category.articles.create(article_info)
+  end
+end

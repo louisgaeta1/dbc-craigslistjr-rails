@@ -1,4 +1,9 @@
 <h1><%= @category.name %></h1>
 
+<ul>
+  <% @category.articles.each do |article| %>
+    <li><a href="/categories/<%=@category.id%>/articles/<%= article.id %>"><%= article.title %></a></li>
+  <% end %>
+</ul>
 
 <%= link_to 'Back', categories_path %>

@@ -1,7 +1,7 @@
 <h1>Craig's List Jr.</h1>
 
 <ul>
-<% @categories.each do |category| %>
-<li><a href="/categories/<%= category.id %>/articles"><%= category.name %></a></li>
-<% end %>
+  <% @categories.each do |category| %>
+    <li><%= link_to "#{category.name}", category_path(category) %></li>
+  <% end %>
 </ul>

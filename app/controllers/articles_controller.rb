@@ -15,13 +15,15 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @category.articles.create(article_params)
-    redirect_to @category
+    @article = @category.articles.create(article_params)
+    @message = "Edit URL: " +  request.host + ":" + request.port.to_s + edit_category_article_path(@category, @article.key)
+    render 'show'
   end
 
   def update
     @article.update(article_params)
-    redirect_to [@category, @article]
+    @message = "Edit URL: " +  request.host + ":" + request.port.to_s + edit_category_article_path(@category, @article.key)
+    render 'show'
   end
 
 private

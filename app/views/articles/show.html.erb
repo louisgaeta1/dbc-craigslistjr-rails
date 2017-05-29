@@ -3,5 +3,8 @@
 <h2><%= @article.email %></h2>
 <h2>$<%= @article.price %></h2>
 
+<% if @message %>
+<p><%= @message %></p>
+<% end %>
 
 <%= link_to 'Back', category_path(@category) %>

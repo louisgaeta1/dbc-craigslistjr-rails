@@ -2,7 +2,7 @@
 
 <ul>
   <% @category.articles.each do |article| %>
-    <li><a href="/categories/<%=@category.id%>/articles/<%= article.id %>"><%= article.title %></a></li>
+    <li><%= link_to "#{article.title}", category_article_path(@category, article)%></li>
   <% end %>
 </ul>
 

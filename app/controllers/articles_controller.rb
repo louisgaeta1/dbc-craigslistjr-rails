@@ -20,7 +20,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    redirect_to @article
+    @article.update(article_params)
+    redirect_to [@category, @article]
   end
 
 private
